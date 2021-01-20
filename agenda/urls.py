@@ -20,12 +20,14 @@ from django.urls import path
 from core import views
 
 urlpatterns = [
+    path('', views.index),
     path('admin/', admin.site.urls),
     path('eventos/<titulo_evento>', views.get_local),
     path('agenda/', views.lista_eventos),
-    path('', views.index),
+    path('agenda/evento/', views.registrar_evento),
+    path('agenda/evento/submit', views.submeter_evento),
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
-    path('logout/', views.logout_user)
+    path('logout/', views.logout_user),
     # path('', RedirectView.as_view(url='/agenda/'))
 ]
