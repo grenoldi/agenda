@@ -23,6 +23,7 @@ class Evento(models.Model):
     def atrasado(self):
         if self.data_evento < datetime.now():
             return True
+        return False
 
     def get_data_evento(self):
         return self.data_evento.strftime('%d/%m/%Y %H:%M')
